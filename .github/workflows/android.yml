@@ -22,15 +22,13 @@ jobs:
 
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
-      working-directory: HWT_Maker_GT6
 
     - name: Build debug APK with Gradle
       run: ./gradlew assembleDebug
-      working-directory: HWT_Maker_GT6
 
     - name: Upload APK artifact
       uses: actions/upload-artifact@v4
       with:
         name: debug-apk
-        path: HWT_Maker_GT6/app/build/outputs/apk/debug/app-debug.apk
-     
+        path: app/build/outputs/apk/debug/app-debug.apk
+        
